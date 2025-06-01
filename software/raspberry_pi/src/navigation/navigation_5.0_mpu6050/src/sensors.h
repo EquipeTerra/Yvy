@@ -44,7 +44,7 @@ struct KalmanFilter {
      */
     array<double, 3> filtro_Kalman(array<double, 3> rawData);
 
-    void calc(int i);
+    void calc(int i, std::array<double, 3> rawData);
 };
 
 class Sensors {

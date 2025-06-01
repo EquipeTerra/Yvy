@@ -12,20 +12,20 @@ KalmanFilter::~KalmanFilter() {
 std::array<double, 3> KalmanFilter::filtro_Kalman(std::array<double, 3> rawData){
     std::array<double, 3> dataFiltered;
 
-    for(int i = 0; i < 3; i++) calc(i);
+    for(int i = 0; i < 3; i++) calc(i, rawData);
 
     return {ei[0], ei[1], ei[2]};
 }
 
-void KalmanFilter::calc(int i){
+void KalmanFilter::calc(int i, std::array<double, 3> rawData){
     // Estimativa do estado atual
     gk[i] = vx[i] / double(vx[i] + erm);                                   // Ganho de Kalman
     estadoAtual[i] = ei[i] + gk[i] * (rawData[i] - ei[i]);
-    variacaoestadoAtual[i] = (1 - gk[i]) * vx[i];
+    variacaoEstadoAtual[i] = (1 - gk[i]) * vx[i];
 
     // Previsão
     ei[i] = estadoAtual[i];
-    vx[i] = variacaoestadoAtual[i] + r;
+    vx[i] = variacaoEstadoAtual[i] + r;
 }
 
 // Construtor: define endereço e inicializa o descritor como inválido
