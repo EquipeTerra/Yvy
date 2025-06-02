@@ -94,7 +94,11 @@ void Sensors::updateData() {
     
     acc = kalmanFilter.filtro_Kalman(acc); // Aplica filtro de Kalman na aceleração
 
-    lastGyro = {(readWord(0x43) / 131.0), (readWord(0x45) / 131.0), (readWord(0x47) / 131.0)};
+    lastGyro = gyro;
+    gyro = {(readWord(0x43) / 131.0), (readWord(0x45) / 131.0), (readWord(0x47) / 131.0)};
+
+    gyro = kalmanFilter.filtro_Kalman(gyro); // Aplica filtro de Kalman no giroscópio
+
     lastOri = {atan2(lastAcc[1], lastAcc[2]) * 180.0 / M_PI, atan2(-lastAcc[0], sqrt(lastAcc[1] * lastAcc[1] + lastAcc[2] * lastAcc[2])) * 180.0 / M_PI, 0.0};
 
     double deltaT = duration_cast<duration<double>>(deltaTime()).count();
@@ -110,8 +114,8 @@ void Sensors::updateData() {
     array<double, 3> vel = getVel();
     array<double, 3> gyro = getGyro();
 
-    logMessage("Velocidade: " + std::to_string(vel[0]) + ", " + std::to_string(vel[1]) + ", " + std::to_string(vel[2]));
-    logMessage("Aceleração: " + std::to_string(acc[0]) + ", " + std::to_string(acc[1]) + ", " + std::to_string(acc[2]));
+    //logMessage("Velocidade: " + std::to_string(vel[0]) + ", " + std::to_string(vel[1]) + ", " + std::to_string(vel[2]));
+    //logMessage("Aceleração: " + std::to_string(acc[0]) + ", " + std::to_string(acc[1]) + ", " + std::to_string(acc[2]));
     logMessage("Giroscópio: " + std::to_string(gyro[0]) + ", " + std::to_string(gyro[1]) + ", " + std::to_string(gyro[2]));
 }
 

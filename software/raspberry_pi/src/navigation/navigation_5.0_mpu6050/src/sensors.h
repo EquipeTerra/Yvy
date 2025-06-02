@@ -55,8 +55,9 @@ class Sensors {
         // Última velocidade calculada para integração simplificada
         array<double, 3> lastVelocity = {0.0, 0.0, 0.0}; // Última velocidade lida
         array<double, 3> acc = {0.0, 0.0, 0.0}; // Última aceleração lida
-        array<double, 3> lastAcc = {0.0, 0.0, 0.0}; // Última aceleração lida
-        array<double, 3> lastGyro = {0.0, 0.0, 0.0}; // Último giroscópio lido
+        array<double, 3> lastAcc = {0.0, 0.0, 0.0}; 
+        array<double, 3> gyro = {0.0, 0.0, 0.0}; // Último giroscópio lido
+        array<double, 3> lastGyro = {0.0, 0.0, 0.0};
         array<double, 3> lastOri = {0.0, 0.0, 0.0}; // Última orientação lida
 
         // Marcação temporal para cálculo de deltaT
