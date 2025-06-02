@@ -110,6 +110,7 @@ void Sensors::updateData() {
     array<double, 3> vel = getVel();
     
     logMessage("Velocidade: " + std::to_string(vel[0]) + ", " + std::to_string(vel[1]) + ", " + std::to_string(vel[2]));
+    logMessage("Aceleração: " + std::to_string(acc[0]) + ", " + std::to_string(acc[1]) + ", " + std::to_string(acc[2]));
 }
 
 // Obtém valores do acelerômetro e converte para m/s²
