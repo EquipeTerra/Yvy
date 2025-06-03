@@ -53,6 +53,8 @@ void ThrustersControl::initializeThrusters(){
 
 void ThrustersControl::defineAction(Decision decision){
     logMessage("Action: " + actionToString(decision.action) + ", Power: " + to_string(decision.value));
+    this->action = decision.action;
+
     stabilizeHori = true;
     stabilizeVert = true;
 
@@ -125,6 +127,10 @@ bool ThrustersControl::getStabilizeVert(){
 
 bool ThrustersControl::getStabilizeHori(){
     return stabilizeHori;
+}
+
+Action ThrustersControl::getAction(){
+    return action;
 }
 
 void ThrustersControl::finish(){

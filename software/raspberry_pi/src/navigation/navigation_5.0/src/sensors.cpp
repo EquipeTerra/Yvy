@@ -34,8 +34,6 @@ Sensors::Sensors(){
     oldTime = currentTime;
 }
 
-Sensors::~Sensors(){}
-
 void Sensors::initialize(){
     logMessage("Listening messages...");
 

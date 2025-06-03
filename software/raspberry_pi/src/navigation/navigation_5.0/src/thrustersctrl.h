@@ -81,6 +81,8 @@ class Thruster{
 class ThrustersControl{
     private:
         vector<Thruster> thrusters;
+        Action action = Action::NONE;
+
         bool stabilizeVert = true, stabilizeHori = true;
 
     public:
@@ -108,6 +110,13 @@ class ThrustersControl{
         bool getStabilizeVert();
 
         bool getStabilizeHori();
+
+        /**
+         * @brief Gets the current action of the thrusters.
+         * 
+         * @return The current action of the thrusters.
+         */
+        Action getAction();
 
         /**
          * @brief Finish the thrusters.
