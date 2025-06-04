@@ -1,30 +1,33 @@
-/*
-Implementação em PYTHON
-*/
+# 
+# Implementação em PYTHON
+#
 
-
-/**
-     * @brief Pre-Processa a Imagem para uma melhor detecção do gate.
-     * @details Faz aplicação de filtro gaussiano,Aplicação de melhoria por CLAHE,Converte a imagem de BGR para HSV,muda para escala de cinza e binariza.
-     * @param[in] image open CV Mat com a imagem a ser processada.
-     * @returns Imagem Pre-Processada.
-     */
+#
+# @brief Pré-processa a imagem para uma melhor detecção do gate.
+# @details Aplica filtro Gaussiano, melhoria de contraste com CLAHE, 
+#          converte a imagem de BGR para HSV, transforma para escala de cinza e binariza.
+# @param[in] image OpenCV Mat com a imagem a ser processada.
+# @return Imagem pré-processada.
+#
 def PreProcessImage(image):
     return image
 
-/**
-     * @brief Recebe uma imagem ja binarizada, acha os contornos e aproxima valores retangulares.
-     * @details Utilize o kernel da opencv para achar linhas verticais formando retangulos, limite a 2 para as barras laterais,ache as cordenadas com base no centro da imagem, isso sera rodado em paralelo com a YOLO.
-     * @param[in] image open CV Mat ja binarizada.
-     * @returns cordenadas uma lista com as coordenadas dos retangulos encontrados.
-     */
-
+#
+# @brief Recebe uma imagem já binarizada, encontra os contornos e aproxima valores retangulares.
+# @details Utiliza kernel do OpenCV para detectar linhas verticais formando retângulos. 
+#          Limita a detecção a 2 retângulos correspondentes às barras laterais.
+#          Calcula as coordenadas com base no centro da imagem.
+#          Esta função será executada em paralelo com a YOLO.
+# @param[in] image OpenCV Mat já binarizada.
+# @return coordenadas: lista com as coordenadas dos retângulos encontrados.
+#
 def DetectGate(image):
-    return coordenates[]
+    return coordenadas
 
-/*
--A openCV disponibiliza a maioria das estruturas necessarias para implementação
--A função de preprocessamento pode ser chamada antes ou dentro da detecção de gate mas caso seja chamado dentro o input da imagem não deve ser em binario.
--É necessário que a imagem esteja em escala de cinza e binarizada para a detecção de gate.
-
-*/
+#
+# Notas:
+# - O OpenCV fornece a maioria das funções necessárias para a implementação.
+# - A função de pré-processamento pode ser chamada antes ou dentro da detecção do gate.
+#   Se for chamada dentro, a imagem de entrada não deve estar binarizada.
+# - É necessário que a imagem esteja em escala de cinza e binarizada para a detecção do gate.
+#
