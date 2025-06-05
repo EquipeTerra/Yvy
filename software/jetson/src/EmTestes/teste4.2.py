@@ -17,7 +17,7 @@ try:
     while True:
         # Lê da memória compartilhada
         np_frame = np.ndarray((HEIGHT, WIDTH, CHANNELS), dtype=np.uint8, buffer=shm.buf)
-        results = model(np_frame, show=True, conf=0.5)
+        results = model(np_frame, show=True, conf=0.5,imgsz=640)
         qnto_frames += 1
         print(f"Frames processados: {qnto_frames}")
 

@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b4a5813-818e-42a5-971b-769efa51ab03" name="Changes" comment="troca cam e exclude de img whatsapp(solve)">
-      <change afterPath="$PROJECT_DIR$/software/jetson/src/EmTestes/teste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/jetson/src/programs/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/software/jetson/src/programs/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/jetson/src/EmTestes/teste4.2.py" beforeDir="false" afterPath="$PROJECT_DIR$/software/jetson/src/EmTestes/teste4.2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +28,12 @@
     &quot;assignee&quot;: &quot;GustavoPiaz2102&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/2005HAK/Terra.git&quot;,
-    &quot;accountId&quot;: &quot;143ee950-044d-456e-a0a7-74d3c91175fa&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/EquipeTerra/Terra.git",
+    "accountId": "143ee950-044d-456e-a0a7-74d3c91175fa"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -69,7 +67,7 @@
       <recent name="$PROJECT_DIR$/software/jetson/src/Testes" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.TradeCamRecive">
     <configuration name="TradeCamRecive" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Terra" />
       <option name="ENV_FILES" value="" />
