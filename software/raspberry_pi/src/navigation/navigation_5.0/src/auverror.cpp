@@ -59,6 +59,8 @@ array<double, 3> CollisionDetected::getAcceleration(){
     return this->acceleration;
 }
 
-FailedConnectWiringPi::FailedConnectWiringPi() : AUVError("Failed to connect WiringPi", 152){}
+FailedConnectWiringPi::FailedConnectWiringPi(string type, int code) : AUVError(type, code){}
+
+FailedConnectThrusters::FailedConnectThrusters() : FailedConnectWiringPi("Failed to connect thrusters", 451){}
 
 FailedFiringTorpedo::FailedFiringTorpedo() : AUVError("Failed to fire torpedo", 820){}

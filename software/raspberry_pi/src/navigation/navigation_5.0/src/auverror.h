@@ -234,7 +234,18 @@ class FailedConnectWiringPi : public AUVError{
         /**
          * @brief Constructor of the FailedConnectWiringPi class.
          */
-        FailedConnectWiringPi();
+        FailedConnectWiringPi(string type = "Failed to connect wiringPi", int code = 450);
+};
+
+class FailedConnectThrusters : public FailedConnectWiringPi{
+    public:
+        /**
+         * @brief Constructor of the FailedConnectThrusters class.
+         * 
+         * @param type Type of error identified.
+         * @param code Error code.
+         */
+        FailedConnectThrusters();
 };
 
 /**
