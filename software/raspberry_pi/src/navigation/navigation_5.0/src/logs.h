@@ -4,6 +4,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <chrono>
+#include <thread>
+
+using namespace chrono;
+using namespace this_thread;
 
 using namespace std;
 

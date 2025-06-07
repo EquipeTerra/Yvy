@@ -4,13 +4,8 @@
 #include <wiringPi.h>
 #include <math.h>
 #include <vector>
-#include <chrono>
-#include <thread>
 #include <mutex>
 #include "auverror.h"
-
-using namespace chrono;
-using namespace this_thread;
 
 /**
  * Enum representing the actions the AUV can perform.
