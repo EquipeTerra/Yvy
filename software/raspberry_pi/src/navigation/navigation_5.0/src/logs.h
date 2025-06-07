@@ -11,7 +11,6 @@ using namespace std;
 using namespace chrono;
 using namespace this_thread;
 
-
 /**
  * @brief Logs a message to the console or file based on the mode.
  * 

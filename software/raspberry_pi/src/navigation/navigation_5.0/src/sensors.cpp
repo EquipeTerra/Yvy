@@ -34,6 +34,12 @@ Sensors::Sensors(){
     oldTime = currentTime;
 }
 
+Sensors::~Sensors(){
+    logMessage("Destroying Sensors object...");
+    // O que for necessário destruir
+    logMessage("Sensors object destroyed.");
+}
+
 void Sensors::initialize(){
     logMessage("Listening messages...");
 
