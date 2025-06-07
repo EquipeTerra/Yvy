@@ -40,13 +40,6 @@ enum class Action{
 };
 
 /**
- * @brief Gets the current time as a string.
- * 
- * @return The current time in string format.
- */
-string getTime();
-
-/**
  * @brief Converts the action enum to a string.
  * 
  * @param action The action to convert to string.

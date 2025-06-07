@@ -21,4 +21,11 @@ void logMessage(std::string message);
  */
 void logToFile(std::string message);
 
+/**
+ * @brief Gets the current time as a string.
+ * 
+ * @return The current time in string format.
+ */
+string getTime();
+
 #endif // LOGS_H
