@@ -4,12 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <chrono>
-#include <thread>
 
 using namespace std;
-using namespace chrono;
-using namespace this_thread;
 
 /**
  * @brief Logs a message to the console or file based on the mode.
@@ -24,12 +20,5 @@ void logMessage(std::string message);
  * @param message The message to log.
  */
 void logToFile(std::string message);
-
-/**
- * @brief Gets the current time as a string.
- * 
- * @return The current time in string format.
- */
-string getTime();
 
 #endif // LOGS_H

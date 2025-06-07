@@ -272,9 +272,7 @@ void AUVStateMachine::search(){
             sleep_for(milliseconds(100));
         }
     } else if(this->lastState == State::PASSGATE){
-        this->yoloCtrl->switchCam(0);
-        sleep_for(seconds(2));
-
+        // Troca de camera
         Action action = Action::NONE;
 
         while(!searchObjects("PathMarker")){
@@ -296,8 +294,7 @@ void AUVStateMachine::search(){
             sleep_for(milliseconds(100));
         }
     } else if(this->lastState == State::NAVIGATE || this->lastState == State::DROPMARKERS){
-        this->yoloCtrl->switchCam(0);
-        sleep_for(seconds(2));
+        // Troca de camera
 
         int time = 100, count = 0;
 
@@ -434,8 +431,7 @@ void AUVStateMachine::alignToPath(){
 
             if(switchs > 5) isAlign = true;
         }
-        this->yoloCtrl->switchCam(0);
-        sleep_for(seconds(2));
+        // Troca de camera
 
         checksTransition();
     }
@@ -516,8 +512,7 @@ void AUVStateMachine::dropMarkers(){
 
     this->thrusters->defineAction({Action::NONE, 0});
 
-    this->yoloCtrl->switchCam(0);
-    sleep_for(seconds(2));
+    // Troca de camera
 
     // Provavelmete terá uma diferenca de profundidade minima para dropar os marcadores, 
     // tratar isso quando tiver mais detalhes

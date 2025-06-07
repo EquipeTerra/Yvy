@@ -1,11 +1,19 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#include <iostream>
 #include <wiringPi.h>
 #include <math.h>
 #include <vector>
+#include <array>
+#include <chrono>
+#include <thread>
 #include <mutex>
-#include "auverror.h"
+#include <string>
+
+using namespace std;
+using namespace chrono;
+using namespace this_thread;
 
 /**
  * Enum representing the actions the AUV can perform.
@@ -33,6 +41,13 @@ enum class Action{
     TURNLEFT,
     NONE
 };
+
+/**
+ * @brief Gets the current time as a string.
+ * 
+ * @return The current time in string format.
+ */
+string getTime();
 
 /**
  * @brief Converts the action enum to a string.
