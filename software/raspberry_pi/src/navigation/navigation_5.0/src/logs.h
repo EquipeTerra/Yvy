@@ -7,10 +7,10 @@
 #include <chrono>
 #include <thread>
 
+using namespace std;
 using namespace chrono;
 using namespace this_thread;
 
-using namespace std;
 
 /**
  * @brief Logs a message to the console or file based on the mode.
