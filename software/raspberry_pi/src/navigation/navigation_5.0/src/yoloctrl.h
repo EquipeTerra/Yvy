@@ -42,6 +42,7 @@ class YoloCtrl{
         const char* server_ip = "192.168.0.2";
         int port = 65432;
         int stateDetection = 0;
+        int cam;
 
         vector<Object> identifiedObjects;
         mutex mutexIdentifiedObjects;
