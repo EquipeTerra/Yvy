@@ -3,6 +3,11 @@ import cv2
 import numpy as np
 from multiprocessing import shared_memory
 import time
+import cv2
+import numpy as np
+from multiprocessing import shared_memory
+from ultralytics import YOLO
+model = YOLO("../modelos/SHARK_SAWFISH.pt")
 
 # Configurações
 WIDTH = 640
@@ -27,9 +32,7 @@ try:
         # Escreve na memória compartilhada
         np_frame = np.ndarray((HEIGHT, WIDTH, CHANNELS), dtype=np.uint8, buffer=shm.buf)
         np.copyto(np_frame, frame)
-        cv2.imshow('Frame Compartilhado1', np_frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        results = model(np_frame, show=True, conf=0.5,imgsz=640)
 
 except KeyboardInterrupt:
     print("Programa A encerrado.")
