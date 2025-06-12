@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://terra.joinville.ufsc.br/pt_br/">
+  <img width="900" src="https://github.com/EquipeTerra/Terra/blob/master/PSTAND/upscalemedia-transformed.jpeg" alt="Terra Banner"></a>
+</p>
+<div align="center">
 # AUV Project
 
 ## Visão Geral
