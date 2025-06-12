@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://terra.joinville.ufsc.br/pt_br/">
-    <img width="900" src="upscalemedia-transformed.png" alt="Terra Banner">
+    <img width="900" src="https://github.com/EquipeTerra/Terra/blob/master/PSTAND/test.png" alt="Terra Banner">
   </a>
 </p>
 
