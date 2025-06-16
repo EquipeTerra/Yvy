@@ -28,12 +28,12 @@
     &quot;assignee&quot;: &quot;GustavoPiaz2102&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/EquipeTerra/Terra.git",
-    "accountId": "143ee950-044d-456e-a0a7-74d3c91175fa"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/EquipeTerra/Terra.git&quot;,
+    &quot;accountId&quot;: &quot;143ee950-044d-456e-a0a7-74d3c91175fa&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
