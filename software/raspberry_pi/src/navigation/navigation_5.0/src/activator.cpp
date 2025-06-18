@@ -7,10 +7,7 @@ Activator::Activator(int pin) : pinNumber(pin) {
 
 void Activator::WaitingForActivation() {
     // Esse pino precisa de um resistor de pull-up
-    int value = gpioRead(pinNumber);
-    while(value){
-        int value = gpioRead(pinNumber);
-        cout << "Waiting for activation: " << value << endl;
+    while(gpioRead(pinNumber)){
         sleep_for(milliseconds(100));
     }
 }
