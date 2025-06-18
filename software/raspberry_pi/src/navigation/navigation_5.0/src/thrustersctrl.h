@@ -79,6 +79,8 @@ class ThrustersControl{
 
         bool stabilizeVert = true, stabilizeHori = true;
 
+        static ThrustersControl* instance;
+
     public:
         /**
          * @brief Constructs a new ThrustersControl object.
@@ -94,8 +96,10 @@ class ThrustersControl{
          */
         void initializeThrusters();
 
-        void signalHandler(int signum);
-        
+        void internalSignalHandler(int signum);
+
+        static void signalHandler(int signum);
+
         /**
          * @brief Defines the action for the thrusters based on the given decision.
          * 
