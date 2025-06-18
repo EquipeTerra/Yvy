@@ -79,8 +79,6 @@ class ThrustersControl{
 
         bool stabilizeVert = true, stabilizeHori = true;
 
-        static ThrustersControl* instance;
-
     public:
         /**
          * @brief Constructs a new ThrustersControl object.
@@ -95,10 +93,6 @@ class ThrustersControl{
          * Creates each AUV thruster, adds each one to the thrusters vector, and waits 7 seconds for the thrusters to start.
          */
         void initializeThrusters();
-
-        void internalSignalHandler(int signum);
-
-        static void signalHandler(int signum);
 
         /**
          * @brief Defines the action for the thrusters based on the given decision.

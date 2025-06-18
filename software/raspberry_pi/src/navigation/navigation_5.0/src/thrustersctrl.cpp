@@ -26,10 +26,6 @@ void Thruster::finishesThruster(){
 ThrustersControl::ThrustersControl(){
     logMessage("Starting thrusters...");
 
-    instance = this;
-
-    signal(SIGINT, signalHandler);
-    
     if(gpioInitialise() < 0) throw FailedConnectWiringPi();
 
     initializeThrusters();
@@ -45,20 +41,6 @@ void ThrustersControl::initializeThrusters(){
         else thrusters.emplace_back(PINS[i], 0);
     }
     sleep_for(seconds(7));
-}
-
-void ThrustersControl::internalSignalHandler(int signum){
-    for(int pin : PINS){
-        gpioServo(pin, 0);
-    }
-
-    gpioTerminate();
-}
-
-void ThrustersControl::signalHandler(int signum){
-    if(instance){
-        instance->internalSignalHandler(signum);
-    }
 }
 
 void ThrustersControl::defineAction(Decision decision){
