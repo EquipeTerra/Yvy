@@ -33,6 +33,7 @@ struct Decision{
 class Thruster{
     private:
         int pin, stablePower, currentPower;
+        int minPWMus = 1000, maxPWMus = 2000;
         int pwmRange = 1000;
 
     public:
@@ -43,13 +44,6 @@ class Thruster{
          * @param stablePower Power for this thruster to stabilize the AUV (Vx: 0, Vy: 0, Vz: 0).
          */
         Thruster(int pin, int stablePower);
-
-        /**
-         * @brief Initializes the thruster.
-         * 
-         * Sets the pin as output, sets the PWM mode as MS (mark:space), sets the clock divisor (default clock 19.2MHz), sets the PWM value range, and writes 0 to the pin, which corresponds to 1500us.
-         */
-        void initThruster();
 
         /**
          * @brief Sets a PWM value into dutycycle value from a percentage value.
@@ -100,6 +94,8 @@ class ThrustersControl{
          */
         void initializeThrusters();
 
+        void signalHandler(int signum);
+        
         /**
          * @brief Defines the action for the thrusters based on the given decision.
          * 

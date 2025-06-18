@@ -1,24 +1,16 @@
 #include "thrustersctrl.h"
 
 Thruster::Thruster(int pin, int stablePower) : pin(pin), stablePower(stablePower), currentPower(0){
-    initThruster();
-}
-
-void Thruster::initThruster(){
-    pinMode(this->pin, PWM_OUTPUT);
-    pwmSetMode(PWM_MODE_MS); // Entender e alterar se necessario
-    pwmSetClock(19200000 / (FREQUENCY * this->pwmRange));
-    pwmSetRange(pwmRange); // 
-    pwmWrite(this->pin, percentageToDutycycle(0));
+    gpioSetMode(this->pin, PI_OUTPUT);
+    gpioServo(this->pin, 1500);
 }
 
 void Thruster::move(double value){
     int pwmValue = percentageToDutycycle(value);
-    pwmWrite(pin, pwmValue);
+    gpioServo(this->pin, pwmValue);
 }
 
 int Thruster::percentageToDutycycle(double value){
-    // ENTENDER POR QUE ISSO SÓ FUNCIONOU COM DOUBLE !!!!!!!!!!!!!!
     int minPWMus = 1100, maxPWMus = 1900;
 
     double usefulPower = (value > 0 ? (100 - stablePower) : (100 + stablePower)) * (value / 100);
@@ -28,13 +20,15 @@ int Thruster::percentageToDutycycle(double value){
 }
 
 void Thruster::finishesThruster(){
-    pwmWrite(this->pin, 0);
+    gpioServo(this->pin, 0);
 }
 
 ThrustersControl::ThrustersControl(){
     logMessage("Starting thrusters...");
+
+    signal(SIGINT, signalHandler);
     
-    if(wiringPiSetup() == -1) throw FailedConnectWiringPi();
+    if(gpioInitialise() < 0) throw FailedConnectWiringPi();
 
     initializeThrusters();
 
@@ -49,6 +43,14 @@ void ThrustersControl::initializeThrusters(){
         else thrusters.emplace_back(PINS[i], 0);
     }
     sleep_for(seconds(7));
+}
+
+void ThrustersControl::signalHandler(int signum){
+    for(int pin : PINS){
+        gpioServo(pin, 0);
+    }
+
+    gpioTerminate();
 }
 
 void ThrustersControl::defineAction(Decision decision){
@@ -137,6 +139,8 @@ void ThrustersControl::finish(){
     logMessage("Turning off the thrusters...");
 
     for(int i = 0; i < thrusters.size(); i++) thrusters[i].finishesThruster();
+
+    gpioTerminate();
 
     logMessage("Thrusters off");
 }
