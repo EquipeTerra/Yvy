@@ -14,8 +14,8 @@ array<int, 4> decToBin(int decimal) {
 
 YoloCtrl::YoloCtrl(){
     for(auto pin : PINS_STATE_DETECTION){
-        pinMode(pin, OUTPUT);
-        digitalWrite(pin, LOW);  // Inicializa os pinos como LOW
+        gpioSetMode(pin, PI_OUTPUT);
+        gpioWrite(pin, 0);  // Inicializa os pinos como LOW
     }
 
     logMessage("Object YoloCtrl created.");
@@ -163,7 +163,7 @@ bool YoloCtrl::changeStateDetection(int state){
 
 void YoloCtrl::sendStateDetection(){
     lock_guard<mutex> lock(mutexIdentifiedObjects); // verificar necessidade
-    for(auto value : decToBin(stateDetection)) digitalWrite(PINS_STATE_DETECTION[value], HIGH);
+    for(auto value : decToBin(stateDetection)) gpioWrite(PINS_STATE_DETECTION[value], 1);
 }
 
 void YoloCtrl::stop(){
