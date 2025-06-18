@@ -11,12 +11,10 @@ void Thruster::move(double value){
 }
 
 int Thruster::percentageToDutycycle(double value){
-    int minPWMus = 1100, maxPWMus = 1900;
-
     double usefulPower = (value > 0 ? (100 - stablePower) : (100 + stablePower)) * (value / 100);
     currentPower = max(-POWER_MAX, min(stablePower + usefulPower, POWER_MAX));
 
-    return (FREQUENCY / 1000000) * (minPWMus + ((maxPWMus - minPWMus) / 2) * (1 + (currentPower / 100))) * pwmRange;
+    return (minPWMus + (pwmRange / 2)) + ((currentPower / 100) * (pwmRange / 2));
 }
 
 void Thruster::finishesThruster(){
