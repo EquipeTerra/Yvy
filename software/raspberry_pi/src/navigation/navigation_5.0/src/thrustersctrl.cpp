@@ -57,7 +57,7 @@ void ThrustersControl::internalSignalHandler(int signum){
 
 void ThrustersControl::signalHandler(int signum){
     if(instance){
-        instance->internalSignalHandler(signum)
+        instance->internalSignalHandler(signum);
     }
 }
 
