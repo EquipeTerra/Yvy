@@ -1,8 +1,6 @@
 sudo mv build/auv.log ~/Terra/logs/raspberry
 sudo rm -rf build/*
 cd build
-sudo pigpiod
-sudo systemctl enable pigpiod
 cmake ..
 make -j$(nproc)
 sudo ip addr add 192.168.0.1/24 dev eth0

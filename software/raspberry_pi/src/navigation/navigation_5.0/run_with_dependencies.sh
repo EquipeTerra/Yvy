@@ -41,8 +41,6 @@ echo "Instalação concluída!"
 
 echo "Executando código"
 
-sudo pigpiod
-sudo systemctl enable pigpiod
 rm -rf build/*
 cd build
 cmake ..
