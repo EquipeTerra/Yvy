@@ -4,7 +4,11 @@
   </a>
 </p>
 
-# AUV Project
+# I.A.R.A Project
+
+*Instrumento Autônomo de Rastreamento Aquático.*
+
+O nome IARA é inspirado na lendária entidade das águas da mitologia brasileira — uma sereia que habita os rios amazônicos, conhecida por sua beleza hipnotizante e por proteger os domínios submersos da floresta. Ao adotarmos esse nome, buscamos refletir a harmonia entre tecnologia e natureza, evocando a fluidez, inteligência e mistério do ambiente aquático. IARA representa não apenas a força e a elegância do nosso AUV, mas também a identidade cultural brasileira que guia nosso projeto.
 
 ## Visão Geral
 
