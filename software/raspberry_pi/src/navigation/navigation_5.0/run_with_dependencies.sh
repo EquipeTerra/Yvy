@@ -16,13 +16,15 @@ sudo apt install -y \
     libcurl4-openssl-dev \
     libssl-dev
 
-echo "Instalando WiringPi..."
+#echo "Instalando WiringPi..."
 
-sudo mkdir WiringPi
-sudo git clone https://github.com/WiringPi/WiringPi.git WiringPi
-cd WiringPi
-sudo ./build
-cd ..
+#sudo mkdir WiringPi
+#sudo git clone https://github.com/WiringPi/WiringPi.git WiringPi
+#cd WiringPi
+#sudo ./build
+#cd ..
+
+sudo apt-get install pigpio
 
 echo "Baixando e instalando MAVSDK..."
 

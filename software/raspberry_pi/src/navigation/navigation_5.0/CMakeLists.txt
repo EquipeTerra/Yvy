@@ -8,8 +8,6 @@ include_directories(src)
 
 find_package(MAVSDK REQUIRED)
 
-find_library(WIRINGPI_LIB wiringPi)
-
 set(SOURCES
 	src/activator.cpp
 	src/auverror.cpp
@@ -23,4 +21,4 @@ set(SOURCES
 
 add_executable(run_auv ${SOURCES})
 
-target_link_libraries(run_auv MAVSDK::mavsdk ${WIRINGPI_LIB} pthread)
+target_link_libraries(run_auv MAVSDK::mavsdk pigpio pthread rt)

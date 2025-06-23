@@ -17,7 +17,7 @@ const double FREQUENCY = 200;
  * 4 - Back right
  * 5 - Back left 
  */
-const array<int, 6> PINS = {0, 1, 3, 4, 5, 2};
+const array<int, 6> PINS = {17, 18, 22, 23, 24, 27};
 
 /**
  * @brief Struct representing a decision for thruster action
@@ -33,6 +33,7 @@ struct Decision{
 class Thruster{
     private:
         int pin, stablePower, currentPower;
+        int minPWMus = 1000, maxPWMus = 2000;
         int pwmRange = 1000;
 
     public:
@@ -43,13 +44,6 @@ class Thruster{
          * @param stablePower Power for this thruster to stabilize the AUV (Vx: 0, Vy: 0, Vz: 0).
          */
         Thruster(int pin, int stablePower);
-
-        /**
-         * @brief Initializes the thruster.
-         * 
-         * Sets the pin as output, sets the PWM mode as MS (mark:space), sets the clock divisor (default clock 19.2MHz), sets the PWM value range, and writes 0 to the pin, which corresponds to 1500us.
-         */
-        void initThruster();
 
         /**
          * @brief Sets a PWM value into dutycycle value from a percentage value.

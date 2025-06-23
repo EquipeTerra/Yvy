@@ -1,7 +1,9 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <wiringPi.h>
+#include <pigpio.h>
+#include <csignal>
+#include <cstdlib>
 #include <math.h>
 #include <vector>
 #include <mutex>

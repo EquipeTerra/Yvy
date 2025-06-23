@@ -96,7 +96,7 @@ void definesAction(Action &action, double velocity, double errorVelocity, Action
 
 AUVStateMachine::AUVStateMachine(){
     logMessage("Waiting for activation...");
-    Activator act(6); // GPIO 25 = pino 6 no esquema WiringPi
+    Activator act(25); // GPIO 25
     act.WaitingForActivation();
     logMessage("Ativado!");
 
