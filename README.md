@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# I.A.R.A Project
+# YVY Project
 
 *Emoguasu para, hakatu epytake yvy ápe rupi*
 
