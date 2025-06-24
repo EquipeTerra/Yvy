@@ -1,14 +1,16 @@
 <p align="center">
   <a href="https://terra.joinville.ufsc.br/pt_br/">
-    <img width="900" src="https://github.com/EquipeTerra/.github/blob/main/PSTAND/I.A.R.A.png" alt="Terra Banner">
+    <img width="900" src="https://github.com/EquipeTerra/.github/blob/main/PSTAND/YVY.png" alt="Terra Banner">
   </a>
 </p>
 
 # I.A.R.A Project
 
-*Instrumento Autônomo de Rastreamento Aquático.*
+*Emoguasu para, hakatu epytake yvy ápe rupi*
 
-O nome IARA é inspirado na lendária entidade das águas da mitologia brasileira — uma sereia que habita os rios amazônicos, conhecida por sua beleza hipnotizante e por proteger os domínios submersos da floresta. Ao adotarmos esse nome, buscamos refletir a harmonia entre tecnologia e natureza, evocando a fluidez, inteligência e mistério do ambiente aquático. IARA representa não apenas a força e a elegância do nosso AUV, mas também a identidade cultural brasileira que guia nosso projeto.
+**Yvi** (do tupi-guarani, “terra”) é o nome oficial do primeiro Veículo Autônomo Submarino (AUV) desenvolvido pela equipe **Terra Competition** da Universidade Federal de Santa Catarina (UFSC) – Campus Joinville.
+
+Este repositório é o lar do **Projeto Yvi**, reunindo todo o código-fonte, documentação e recursos relacionados ao desenvolvimento do robô submarino autônomo da equipe.
 
 ## Visão Geral
 
