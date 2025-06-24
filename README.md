@@ -6,7 +6,8 @@
 
 # YVY Project
 
-*Emoguasu para, hakatu epytake yvy ápe rupi*
+Emoguasu para, hakatu epytake yvy ápe rupi
+*glorifique o oceano, mas fique em terra firme*
 
 **Yvi** (do tupi-guarani, “terra”) é o nome oficial do primeiro Veículo Autônomo Submarino (AUV) desenvolvido pela equipe **Terra Competition** da Universidade Federal de Santa Catarina (UFSC) – Campus Joinville.
 
